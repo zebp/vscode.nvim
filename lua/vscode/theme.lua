@@ -88,10 +88,10 @@ theme.load_syntax = function()
         Ignore = { c.vscFront, nil, 'none', nil },
         Error = { c.vscRed, c.vscBack, 'undercurl', c.vscRed },
         Todo = { c.vscYellowOrange, c.vscBack, 'bold', nil },
-        SpellBad = { c.vscRed, c.vscBack, 'undercurl', c.vscRed },
-        SpellCap = { c.vscRed, c.vscBack, 'undercurl', c.vscRed },
-        SpellRare = { c.vscRed, c.vscBack, 'undercurl', c.vscRed },
-        SpellLocal = { c.vscRed, c.vscBack, 'undercurl', c.vscRed },
+        SpellBad = { c.vscRed, c.vscBack, 'none', c.vscRed },
+        SpellCap = { c.vscRed, c.vscBack, 'none', c.vscRed },
+        SpellRare = { c.vscRed, c.vscBack, 'none', c.vscRed },
+        SpellLocal = { c.vscRed, c.vscBack, 'none', c.vscRed },
         Whitespace = { isDark and c.vscLineNumber or c.vscTabOther, nil, 'none', nil },
 
         -- Treesitter
@@ -495,6 +495,10 @@ theme.load_syntax = function()
             'bold',
             nil,
         },
+
+        -- Rust
+        rustTSVariableBuiltin = { c.vscBlue, nil, 'none', nil },
+        rustTSInclude = { c.vscBlue, nil, 'none', nil },
     }
 
     if isDark then
