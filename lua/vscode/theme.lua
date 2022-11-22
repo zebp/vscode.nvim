@@ -88,12 +88,20 @@ theme.set_highlights = function(opts)
     hl(0, 'SpellLocal', { fg = c.vscRed, bg = c.vscBack, undercurl = true, sp = c.vscRed })
     hl(0, 'Whitespace', { fg = isDark and c.vscLineNumber or c.vscTabOther })
 
+    -- Rust
+    hl(0, '@include.rust', { fg = c.vscBlue, bg = 'NONE' })
+    hl(0, '@keyword.rust', { fg = c.vscBlue, bg = 'NONE' })
+    hl(0, '@variable.builtin.rust', { fg = c.vscBlue, bg = 'NONE' })
+    hl(0, '@label.rust', { fg = c.vscBlue, bg = 'NONE' })
+    hl(0, '@type.builtin.rust', { fg = c.vscBlueGreen, bg = 'NONE' })
+    hl(0, '@type.enum_variant.rust', { fg = c.vscRed, bg = 'NONE' })
+
     -- Treesitter
     hl(0, '@error', { fg = c.vscRed, bg = 'NONE' })
     hl(0, '@punctuation.bracket', { fg = c.vscFront, bg = 'NONE' })
     hl(0, '@punctuation.special', { fg = c.vscFront, bg = 'NONE' })
     hl(0, '@comment', { fg = c.vscGreen, bg = 'NONE', italic = opts.italic_comments })
-    hl(0, '@constant', { fg = c.vscYellow, bg = 'NONE' })
+    hl(0, '@constant', { fg = c.vscMediumBlue, bg = 'NONE' })
     hl(0, '@constant.builtin', { fg = c.vscBlue, bg = 'NONE' })
     hl(0, '@constant.macro', { fg = c.vscBlueGreen, bg = 'NONE' })
     hl(0, '@string.regex', { fg = c.vscOrange, bg = 'NONE' })
@@ -414,7 +422,8 @@ theme.set_highlights = function(opts)
     hl(0, 'NvimTreeCursorLine', { fg = 'NONE', bg = opts.disable_nvimtree_bg and c.vscCursorDarkDark or c.vscLeftMid })
     hl(0, 'NvimTreeVertSplit', { fg = opts.disable_nvimtree_bg and c.vscSplitDark or c.vscBack, bg = c.vscBack })
     hl(0, 'NvimTreeEndOfBuffer', { fg = opts.disable_nvimtree_bg and c.vscCursorDarkDark or c.vscLeftDark })
-    hl(0, 'NvimTreeOpenedFolderName', { fg = 'NONE', bg = opts.disable_nvimtree_bg and c.vscCursorDarkDark or c.vscLeftDark })
+    hl(0, 'NvimTreeOpenedFolderName',
+        { fg = 'NONE', bg = opts.disable_nvimtree_bg and c.vscCursorDarkDark or c.vscLeftDark })
     hl(0, 'NvimTreeGitRenamed', { fg = c.vscGitRenamed, bg = 'NONE' })
     hl(0, 'NvimTreeGitIgnored', { fg = c.vscGitIgnored, bg = 'NONE' })
     hl(0, 'NvimTreeGitDeleted', { fg = c.vscGitDeleted, bg = 'NONE' })
@@ -546,28 +555,28 @@ theme.set_highlights = function(opts)
         hl(0, 'LspSagaRenameBorder', { fg = c.vscTabOther, bg = 'NONE' })
         hl(0, 'LspSagaLspFinderBorder', { fg = c.vscTabOther, bg = 'NONE' })
 
-        hl(0, 'TelescopePromptBorder', { fg=c.vscTabOther, bg='NONE' })
-        hl(0, 'TelescopeResultsBorder', { fg=c.vscTabOther, bg='NONE' })
-        hl(0, 'TelescopePreviewBorder', { fg=c.vscTabOther, bg='NONE' })
-        hl(0, 'TelescopeNormal', { fg=c.vscFront, bg='NONE' })
-        hl(0, 'TelescopeSelection', { fg='#FFFFFF', bg=c.vscPopupHighlightBlue })
-        hl(0, 'TelescopeMultiSelection', { fg=c.vscBack, bg=c.vscPopupHighlightBlue })
-        hl(0, 'TelescopeMatching', { fg='orange', bg='NONE', bold=true, nil  })
-        hl(0, 'TelescopePromptPrefix', { fg=c.vscFront, bg='NONE' })
+        hl(0, 'TelescopePromptBorder', { fg = c.vscTabOther, bg = 'NONE' })
+        hl(0, 'TelescopeResultsBorder', { fg = c.vscTabOther, bg = 'NONE' })
+        hl(0, 'TelescopePreviewBorder', { fg = c.vscTabOther, bg = 'NONE' })
+        hl(0, 'TelescopeNormal', { fg = c.vscFront, bg = 'NONE' })
+        hl(0, 'TelescopeSelection', { fg = '#FFFFFF', bg = c.vscPopupHighlightBlue })
+        hl(0, 'TelescopeMultiSelection', { fg = c.vscBack, bg = c.vscPopupHighlightBlue })
+        hl(0, 'TelescopeMatching', { fg = 'orange', bg = 'NONE', bold = true, nil })
+        hl(0, 'TelescopePromptPrefix', { fg = c.vscFront, bg = 'NONE' })
 
         -- COC.nvim
-        hl(0, 'CocFloating', { fg='NONE', bg=c.vscPopupBack })
-        hl(0, 'CocMenuSel', { fg='#FFFFFF', bg='#285EBA' })
-        hl(0, 'CocSearch', { fg='#2A64B9', bg='NONE' })
+        hl(0, 'CocFloating', { fg = 'NONE', bg = c.vscPopupBack })
+        hl(0, 'CocMenuSel', { fg = '#FFFFFF', bg = '#285EBA' })
+        hl(0, 'CocSearch', { fg = '#2A64B9', bg = 'NONE' })
 
         -- Pmenu
-        hl(0, 'Pmenu', { fg='NONE', bg=c.vscPopupBack })
-        hl(0, 'PmenuSel', { fg='#FFFFFF', bg='#285EBA' })
+        hl(0, 'Pmenu', { fg = 'NONE', bg = c.vscPopupBack })
+        hl(0, 'PmenuSel', { fg = '#FFFFFF', bg = '#285EBA' })
 
         -- symbols-outline
         -- white fg and lualine blue bg
-        hl(0, 'FocusedSymbol', { fg=c.vscBack, bg='#AF00DB' })
-        hl(0, 'SymbolsOutlineConnector', { fg=c.vscTabOther, bg='NONE' })
+        hl(0, 'FocusedSymbol', { fg = c.vscBack, bg = '#AF00DB' })
+        hl(0, 'SymbolsOutlineConnector', { fg = c.vscTabOther, bg = 'NONE' })
     end
 end
 
